@@ -9,15 +9,9 @@ jobs:
         with:
           python-version: '3.10'
       - name: Install poetry
-        exituses: snok/install-poetry@v1
-        with:
-          virtualenvs-create: true
-          virtualenvs-in-project: true
-          installer-parallel: true
+        uses: snok/install-poetry@v1
       - run: poetry build
-      - name: Publish to release
+      - name: Publish to GH release
         uses: softprops/action-gh-release@v1
         with:
           files: ${{ github.workspace }}/dist/*
-          nombre: nombre
-          tag_name: etiqueta
