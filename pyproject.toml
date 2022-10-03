@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "modeltools"
-version = "0.2.0"
+version = "0.2.3"
 description = ""
 authors = ["Alby <alby.mendoza@gmail.com>"]
 readme = "README.md"
@@ -9,6 +9,9 @@ readme = "README.md"
 python = "^3.8"
 numpy = "^1.23.3"
 
+
+[tool.poetry.group.dev.dependencies]
+pandas = "^1.5.0"
 
 [build-system]
 requires = ["poetry-core"]
