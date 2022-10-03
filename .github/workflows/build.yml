@@ -20,3 +20,5 @@ jobs:
         uses: softprops/action-gh-release@v1
           with:
             files: ${{ github.workspace }}/dist/*
+            nombre: nombre
+            tag_name: etiqueta
