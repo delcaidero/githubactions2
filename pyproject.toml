@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "modeltools"
-version = "0.2.4"
+version = "0.2.5"
 description = ""
 authors = ["Alby <alby.mendoza@gmail.com>"]
 readme = "README.md"
@@ -13,7 +13,12 @@ numpy = "^1.23.3"
 [tool.poetry.group.dev.dependencies]
 pandas = "^1.5.0"
 pytest = "^7.1.3"
+Sphinx = "^5.2.3"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules"
