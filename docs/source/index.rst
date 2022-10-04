@@ -16,9 +16,10 @@ Alby
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption:    Contents:
 
-
+   install
+   example
 
 Indices and tables
 ==================
