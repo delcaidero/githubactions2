@@ -27,8 +27,8 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: ${{ github.workspace }}/dist/*
-        if: success() || failure()
       - name: test
+        if: success() || failure()
         uses: dorny/test-reporter@v1
         with:
           artifact: test-results            # artifact name
