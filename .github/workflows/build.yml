@@ -1,8 +1,9 @@
 name: Building
-on: 
-  push:
-    tags:
-    - "v*.*.*"
+on:[push] 
+  
+  #push:
+  #  tags:
+  #  - "v*.*.*"
 
 jobs: 
   building:
@@ -15,11 +16,14 @@ jobs:
       - name: Install poetry
         uses: snok/install-poetry@v1
       - name: Install dependencies
-        run: poetry install
+        #run: poetry install
+        run: poetry install 
       - name: Testing
-        run: poetry run pytest
+        #run: poetry run pytest --junitxml=jest-junit.xml
+        run: poetry run pytest --junitxml=jest-junit.xml
       - run: poetry build
       - name: Publish to GH release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: ${{ github.workspace }}/dist/*
+        if: startsWith(github.ref, 'refs/tags/v')
+          uses: softprops/action-gh-release@v1
+          with:
+            files: ${{ github.workspace }}/dist/*
