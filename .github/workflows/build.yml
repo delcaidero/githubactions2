@@ -25,8 +25,8 @@ jobs:
       - name: Publish to GH release
         if: startsWith(github.ref, 'refs/tags/v')a
         uses: softprops/action-gh-release@v1
-          with:
-            files: ${{ github.workspace }}/dist/*
+        with:
+          files: ${{ github.workspace }}/dist/*
         if: success() || failure()
       - name: test
         uses: dorny/test-reporter@v1
