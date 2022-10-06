@@ -73,3 +73,10 @@ def test_get_numerical_features_complex():
     })
 
     assert get_numerical_features(df) == ['compleja']
+
+
+def test_error():
+    """En este vamos a probar que logra distiguir
+    entre cadenas de texto y numeros enteros"""
+    
+    assert 1 == 2
